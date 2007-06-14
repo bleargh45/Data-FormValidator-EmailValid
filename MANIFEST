@@ -1,0 +1,10 @@
+Build.PL
+Changes
+MANIFEST
+MANIFEST.SKIP
+META.yml
+README.txt
+lib/Data/FormValidator/EmailValid.pm
+t/pod.t
+t/pod_coverage.t
+t/email.t
