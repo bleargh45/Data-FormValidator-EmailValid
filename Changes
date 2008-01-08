@@ -1,4 +1,10 @@
 Revision history for Perl extension Data::FormValidator::EmailValid:
 
+0.02    Tue Jan 08 14:26 PST 2007
+    - first public release
+    - renamed methods to 'FV_email_filter' and 'FV_email'
+    - updated 'FV_email_filter' so it now auto-mangles all e-mail addresses to
+      lower-case (can be disabled, but default is to lc() the e-mail)
+
 0.01    Wed Jun 13  4:02pm 2007
     - initial version

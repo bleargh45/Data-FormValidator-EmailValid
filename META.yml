@@ -1,6 +1,6 @@
 ---
 name: Data-FormValidator-EmailValid
-version: 0.01
+version: 0.02
 author:
   - Graham TerMarsch (cpan@howlingfrog.com)
 abstract: Data::FormValidator e-mail address constraint/filter
@@ -15,7 +15,7 @@ recommends:
 provides:
   Data::FormValidator::EmailValid:
     file: lib/Data/FormValidator/EmailValid.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2805
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
