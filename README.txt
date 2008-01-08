@@ -3,17 +3,17 @@ NAME
     constraint/filter
 
 SYNOPSIS
-      use Data::FormValidator::EmailValid qw(filter_email_valid constrain_email_valid);
+      use Data::FormValidator::EmailValid qw(FV_email_filter FV_email);
 
       $results = Data::FormValidator->check(
             { 'email' => 'Graham TerMarsch <cpan@howlingfrog.com>',
             },
             { 'required' => [qw( email )],
               'field_filters' => {
-                  'email' => filter_email_valid(),
+                  'email' => FV_email_filter(),
               },
               'constraint_methods' => {
-                  'email' => constrain_email_valid(),
+                  'email' => FV_email(),
               },
             );
 
@@ -25,10 +25,11 @@ DESCRIPTION
     Although I generally find that I'm using the filter and constraint
     together, they've been separated so that you could use just one or the
     other (e.g. you may want to constrain on valid e-mail addresses without
-    actually modifying any of the data provided to you by the user).
+    actually cleaning up or filtering any of the data provided to you by the
+    user).
 
 METHODS
-    filter_email_valid(%options)
+    FV_email_filter(%options)
         Filter method which cleans up the given value and returns valid
         e-mail addresses (or nothing, if the value isn't a valid e-mail
         address).
@@ -37,11 +38,15 @@ METHODS
         done to ensure that a valid MX exists or that the address is
         actually deliverable.
 
+        This filter method automatically converts all e-mail addresses to
+        lower-case. This behaviour can be disabled by passing through an
+        "lc=>0" option.
+
         You may also pass through any additional "Email::Valid" %options
         that you want to use; they're handed straight through to
         "Email::Valid".
 
-    constrain_email_valid(%options)
+    FV_email(%options)
         Constraint method which checks to see if the value being constrained
         is a valid e-mail address or not. Returns true if the e-mail address
         is valid, false otherwise.
