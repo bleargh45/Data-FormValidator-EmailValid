@@ -3,4 +3,5 @@ _build/
 .git/
 \..*\.swp
 blib/
+.prove
 .travis.yml
