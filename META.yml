@@ -23,4 +23,5 @@ requires:
   Email::Valid: '0'
 resources:
   license: http://dev.perl.org/licenses/
+  repository: https://github.com/bleargh45/Data-FormValidator-Email
 version: '0.04'
