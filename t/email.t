@@ -9,12 +9,12 @@ BEGIN {
 ###############################################################################
 test_filter: {
     my $results = Data::FormValidator->check(
-        { 'good'                => 'test@example.com',
-          'good-with-name'      => 'Test User <test@example.com>',
-          'good-case-mangled'   => 'TEST@eXaMpLe.CoM',
-          'good-case-preserved' => 'TEST@eXaMpLe.CoM',
+        { 'good'                => 'test@cpan.org',
+          'good-with-name'      => 'Test User <test@cpan.org>',
+          'good-case-mangled'   => 'TEST@cPaN.oRg',
+          'good-case-preserved' => 'TEST@cPaN.oRg',
           'bad-no-domain'       => 'test@',
-          'bad-no-user'         => '@example.com',
+          'bad-no-user'         => '@cpan.org',
           'bad-not-email'       => 'not an e-mail address',
         },
         { 'required' => [qw(
@@ -31,10 +31,10 @@ test_filter: {
               'bad-not-email'       => FV_email_filter(),
           },
         } );
-    is(  $results->valid('good'),                   'test@example.com', 'filter: good' );
-    is(  $results->valid('good-with-name'),         'test@example.com', 'filter: good-with-name' );
-    is(  $results->valid('good-case-mangled'),      'test@example.com', 'filter: good-case-mangled' );
-    is(  $results->valid('good-case-preserved'),    'TEST@eXaMpLe.CoM', 'filter: good-case-preserved' );
+    is(  $results->valid('good'),                   'test@cpan.org', 'filter: good' );
+    is(  $results->valid('good-with-name'),         'test@cpan.org', 'filter: good-with-name' );
+    is(  $results->valid('good-case-mangled'),      'test@cpan.org', 'filter: good-case-mangled' );
+    is(  $results->valid('good-case-preserved'),    'TEST@cPaN.oRg', 'filter: good-case-preserved' );
     ok( !$results->valid('bad-no-domain'),          'filter: bad-no-domain' );
     ok( !$results->valid('bad-no-user'),            'filter: bad-no-user' );
     ok( !$results->valid('bad-not-email'),          'filter: bad-not-email' );
@@ -43,7 +43,7 @@ test_filter: {
 ###############################################################################
 test_constraint: {
     my $results = Data::FormValidator->check(
-        { 'good'        => 'test@example.com',
+        { 'good'        => 'test@cpan.org',
           'bad-no-mx'   => 'test@this-domain-doesnt-exist-anywhere.com',
         },
         { 'required' => [qw(
@@ -55,6 +55,6 @@ test_constraint: {
               'bad-no-mx'   => FV_email(),
           },
         } );
-    is(  $results->valid('good'),               'test@example.com', 'constraint: good' );
+    is(  $results->valid('good'),               'test@cpan.org', 'constraint: good' );
     ok( !$results->valid('bad-no-mx'),          'constraint: bad-no-mx' );
 }
