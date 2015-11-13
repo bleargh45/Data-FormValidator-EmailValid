@@ -15,7 +15,7 @@ name: Data-FormValidator-EmailValid
 provides:
   Data::FormValidator::EmailValid:
     file: lib/Data/FormValidator/EmailValid.pm
-    version: '0.03'
+    version: '0.04'
 recommends:
   Net::DNS: '0'
 requires:
@@ -23,4 +23,4 @@ requires:
   Email::Valid: '0'
 resources:
   license: http://dev.perl.org/licenses/
-version: '0.03'
+version: '0.04'
