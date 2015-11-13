@@ -5,3 +5,5 @@ _build/
 blib/
 .prove
 .travis.yml
+^MYMETA\.yml$
+^MYMETA\.json$

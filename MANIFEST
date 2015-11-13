@@ -4,6 +4,7 @@ MANIFEST
 MANIFEST.SKIP
 Makefile.PL
 META.yml
+META.json
 README.txt
 lib/Data/FormValidator/EmailValid.pm
 t/pod.t
