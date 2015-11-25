@@ -7,6 +7,6 @@ META.yml
 META.json
 README.txt
 lib/Data/FormValidator/EmailValid.pm
-t/pod.t
-t/pod-coverage.t
 t/email.t
+xt/pod.t
+xt/pod-coverage.t
