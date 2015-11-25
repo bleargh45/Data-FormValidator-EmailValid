@@ -17,4 +17,4 @@ before_install:
   - cpanm -n Test::Pod Test::Pod::Coverage
 
 # Build+test
-script: "perl Build.PL && ./Build && prove -b -r --timer t/ xt/"
+script: "perl Build.PL && ./Build && prove -b -r --timer --verbose t/ xt/"
