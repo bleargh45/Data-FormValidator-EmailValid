@@ -1,6 +1,8 @@
 Revision history for Perl extension Data::FormValidator::EmailValid:
 
 {{$NEXT}}
+
+0.06      2020-12-28 12:34:50-08:00 America/Vancouver
     - Switch to Dist::Zilla
     - Remove Travis-CI integration, and switch to GitHub Actions.
 
