@@ -99,17 +99,20 @@ Data::FormValidator::EmailValid - Data::FormValidator e-mail address constraint/
 
   use Data::FormValidator::EmailValid qw(FV_email_filter FV_email);
 
-  $results = Data::FormValidator->check(
-        { 'email' => 'Graham TerMarsch <cpan@howlingfrog.com>',
-        },
-        { 'required' => [qw( email )],
-          'field_filters' => {
-              'email' => FV_email_filter(),
-          },
-          'constraint_methods' => {
-              'email' => FV_email(),
-          },
-        );
+  my $results = Data::FormValidator->check(
+    {
+      'email' => 'Graham TerMarsch <cpan@howlingfrog.com>',
+    },
+    {
+      'required'      => [qw( email )],
+      'field_filters' => {
+        'email' => FV_email_filter(),
+      },
+      'constraint_methods' => {
+        'email' => FV_email(),
+      },
+    },
+  );
 
 =head1 DESCRIPTION
 
