@@ -89,6 +89,8 @@ sub FV_email {
 
 1;
 
+=for stopwords MX
+
 =head1 NAME
 
 Data::FormValidator::EmailValid - Data::FormValidator e-mail address constraint/filter
