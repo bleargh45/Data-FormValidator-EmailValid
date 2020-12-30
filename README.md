@@ -36,33 +36,33 @@ filtering any of the data provided to you by the user).
 - FV\_email\_filter(%options)
 
     Filter method which cleans up the given value and returns valid e-mail
-    addresses (or nothing, if the value isn't a valid e-mail address). 
+    addresses (or nothing, if the value isn't a valid e-mail address).
 
     "Valid" is deemed to mean "looks like an e-mail"; no other tests are done
     to ensure that a valid MX exists or that the address is actually
-    deliverable. 
+    deliverable.
 
     This filter method automatically converts all e-mail addresses to
     lower-case. This behaviour can be disabled by passing through an
-    `lc=>0` option. 
+    `lc=>0` option.
 
     You may also pass through any additional `Email::Valid` `%options` that
-    you want to use; they're handed straight through to `Email::Valid`. 
+    you want to use; they're handed straight through to `Email::Valid`.
 
 - FV\_email(%options)
 
     Constraint method which checks to see if the value being constrained is a
     valid e-mail address or not. Returns true if the e-mail address is valid,
-    false otherwise. 
+    false otherwise.
 
     This differs from the "email" constraint that comes with
     `Data::FormValidator` in that we not only check to make sure that the
     e-mail looks valid, but also that a valid MX record exists for the address.
     No other checks are done to ensure that the address is actually
-    deliverable, however. 
+    deliverable, however.
 
     You can also pass through any additional `Email::Valid` `%options` that
-    you want to use; they're handed straight through to `Email::Valid`. 
+    you want to use; they're handed straight through to `Email::Valid`.
 
 # AUTHOR
 

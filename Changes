@@ -1,7 +1,7 @@
 Revision history for Perl extension Data::FormValidator::EmailValid:
 
 {{$NEXT}}
-    - POD corrections; spelling
+    - POD corrections; spelling, trailing whitespace
 
 0.06      2020-12-28 12:34:50-08:00 America/Vancouver
     - Switch to Dist::Zilla
