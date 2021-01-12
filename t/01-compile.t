@@ -1,20 +1,12 @@
-
-BEGIN {
-  unless ($ENV{AUTHOR_TESTING}) {
-    print qq{1..0 # SKIP these tests are for testing by the author\n};
-    exit
-  }
-}
-
 use 5.006;
 use strict;
 use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.058
 
-use Test::More 0.94;
+use if $ENV{AUTOMATED_TESTING}, 'Test::DiagINC'; use Test::More 0.94;
 
-plan tests => 2;
+plan tests => 1 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 my @module_files = (
     'Data/FormValidator/EmailValid.pm'
@@ -66,6 +58,6 @@ for my $lib (@module_files)
 
 
 is(scalar(@warnings), 0, 'no warnings found')
-    or diag 'got warnings: ', explain(\@warnings);
+    or diag 'got warnings: ', explain(\@warnings) if $ENV{AUTHOR_TESTING};
 
 BAIL_OUT("Compilation problems") if !Test::More->builder->is_passing;

@@ -1,11 +1,3 @@
-
-BEGIN {
-  unless ($ENV{AUTHOR_TESTING}) {
-    print qq{1..0 # SKIP these tests are for testing by the author\n};
-    exit
-  }
-}
-
 use strict;
 use warnings;
 
@@ -18,6 +10,7 @@ my @files = (
     'lib/Data/FormValidator/EmailValid.pm',
     't/00-report-prereqs.dd',
     't/00-report-prereqs.t',
+    't/01-compile.t',
     't/email.t'
 );
 
