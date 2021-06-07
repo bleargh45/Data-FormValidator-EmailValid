@@ -1,6 +1,8 @@
 Revision history for Perl extension Data::FormValidator::EmailValid:
 
 {{$NEXT}}
+    - Remove Net::DNS as a recommended dependency; it is a hard dependency
+      for Email::Valid, which we already depend on.
 
 0.08      2021-01-12 10:55:39-08:00 America/Vancouver
     - Bump minimum required Perl to 5.10; the minimum required for
